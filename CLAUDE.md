@@ -208,3 +208,10 @@ Wait for consent; never auto-create ADRs. Group related decisions (stacks, authe
 
 ## Code Standards
 See `.specify/memory/constitution.md` for code quality, testing, performance, security, and architecture principles.
+
+## Active Technologies
+- Python 3.12 + Flask, pytest, uuid, json, datetime (001-create-todo-task)
+- JSON file-based storage (`data/todos.json`) (001-create-todo-task)
+
+## Recent Changes
+- 001-create-todo-task: Added Python 3.12 + Flask, pytest, uuid, json, datetime
