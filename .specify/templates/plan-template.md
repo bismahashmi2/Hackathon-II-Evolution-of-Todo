@@ -31,7 +31,16 @@
 
 *GATE: Must pass before Phase 0 research. Re-check after Phase 1 design.*
 
-[Gates determined based on constitution file]
+### Compliance Verification:
+- [ ] User-Centric Design: UI/UX follows accessibility standards and intuitive design principles
+- [ ] Data Persistence: Data storage mechanisms ensure reliability and prevent data loss
+- [ ] Test-First: TDD approach followed with tests written before implementation
+- [ ] Performance & Responsiveness: Response times meet 100ms threshold for user interactions
+- [ ] Security & Privacy: User data protected with encryption and proper auth mechanisms
+- [ ] Modularity & Scalability: Codebase structured in modular, reusable components
+- [ ] Technology Stack: Dependencies are minimal and well-supported
+- [ ] Code Review: Peer review process will be followed for all changes
+- [ ] Testing Gates: Code coverage maintained at 80% minimum
 
 ## Project Structure
 

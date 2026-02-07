@@ -1,55 +1,58 @@
-# [PROJECT_NAME] Constitution
-<!-- Example: Spec Constitution, TaskFlow Constitution, etc. -->
+<!--
+Sync Impact Report:
+Version change: 1.0.0 -> 1.0.0 (initial version)
+Modified principles: [PRINCIPLE_1_NAME] -> "I. User-Centric Design", [PRINCIPLE_2_NAME] -> "II. Data Persistence", [PRINCIPLE_3_NAME] -> "III. Test-First (NON-NEGOTIABLE)", [PRINCIPLE_4_NAME] -> "IV. Performance & Responsiveness", [PRINCIPLE_5_NAME] -> "V. Security & Privacy", [PRINCIPLE_6_NAME] -> "VI. Modularity & Scalability"
+Added sections: None
+Removed sections: None
+Templates requiring updates: ✅ updated / ⚠ pending - All templates aligned with new principles
+Follow-up TODOs: None
+-->
+
+# Todo App Constitution
 
 ## Core Principles
 
-### [PRINCIPLE_1_NAME]
-<!-- Example: I. Library-First -->
-[PRINCIPLE_1_DESCRIPTION]
-<!-- Example: Every feature starts as a standalone library; Libraries must be self-contained, independently testable, documented; Clear purpose required - no organizational-only libraries -->
+### I. User-Centric Design
+The application must prioritize intuitive user experience and accessibility. Features should be designed with the end-user in mind, following modern UI/UX best practices and ensuring the interface remains clean and uncluttered. All functionality should be discoverable and usable without extensive training.
 
-### [PRINCIPLE_2_NAME]
-<!-- Example: II. CLI Interface -->
-[PRINCIPLE_2_DESCRIPTION]
-<!-- Example: Every library exposes functionality via CLI; Text in/out protocol: stdin/args → stdout, errors → stderr; Support JSON + human-readable formats -->
+### II. Data Persistence
+All user tasks and data must be reliably stored and retrieved. The application must implement robust data persistence mechanisms that prevent data loss and ensure data integrity. Backup and recovery procedures must be in place to safeguard user information.
 
-### [PRINCIPLE_3_NAME]
-<!-- Example: III. Test-First (NON-NEGOTIABLE) -->
-[PRINCIPLE_3_DESCRIPTION]
-<!-- Example: TDD mandatory: Tests written → User approved → Tests fail → Then implement; Red-Green-Refactor cycle strictly enforced -->
+### III. Test-First (NON-NEGOTIABLE)
+Test Driven Development (TDD) is mandatory for all features. Unit tests must be written before implementation, followed by integration tests. All code must pass comprehensive test suites before merging. The Red-Green-Refactor cycle must be strictly enforced.
 
-### [PRINCIPLE_4_NAME]
-<!-- Example: IV. Integration Testing -->
-[PRINCIPLE_4_DESCRIPTION]
-<!-- Example: Focus areas requiring integration tests: New library contract tests, Contract changes, Inter-service communication, Shared schemas -->
+### IV. Performance & Responsiveness
+The application must respond to user interactions within 100ms for optimal user experience. Loading times should be minimized, and the interface must remain responsive during all operations. Resource usage must be optimized to ensure smooth performance across different devices.
 
-### [PRINCIPLE_5_NAME]
-<!-- Example: V. Observability, VI. Versioning & Breaking Changes, VII. Simplicity -->
-[PRINCIPLE_5_DESCRIPTION]
-<!-- Example: Text I/O ensures debuggability; Structured logging required; Or: MAJOR.MINOR.BUILD format; Or: Start simple, YAGNI principles -->
+### V. Security & Privacy
+User data must be protected with industry-standard security measures. Authentication and authorization must be implemented for any sensitive operations. Personal data should be encrypted at rest and in transit, with privacy controls giving users control over their information.
 
-### [PRINCIPLE_6_NAME]
+### VI. Modularity & Scalability
+The codebase must be structured in modular, reusable components that can scale with growing feature requirements. New features should integrate seamlessly without disrupting existing functionality. The architecture should support horizontal scaling when needed.
 
+## Additional Constraints
 
-[PRINCIPLE__DESCRIPTION]
+### Technology Stack Requirements
+The application must utilize modern, well-supported technologies that align with team expertise. Dependencies should be kept minimal and regularly updated. All technology choices must consider long-term maintenance and community support.
 
-## [SECTION_2_NAME]
-<!-- Example: Additional Constraints, Security Requirements, Performance Standards, etc. -->
+### Compliance Standards
+The application must comply with relevant data protection regulations (GDPR, CCPA) and accessibility standards (WCAG 2.1 AA). Regular audits should verify continued compliance with these standards.
 
-[SECTION_2_CONTENT]
-<!-- Example: Technology stack requirements, compliance standards, deployment policies, etc. -->
+## Development Workflow
 
-## [SECTION_3_NAME]
-<!-- Example: Development Workflow, Review Process, Quality Gates, etc. -->
+### Code Review Requirements
+All code changes must undergo peer review before merging. At least one senior developer must approve each pull request. Reviews must verify adherence to coding standards, security practices, and architectural guidelines.
 
-[SECTION_3_CONTENT]
-<!-- Example: Code review requirements, testing gates, deployment approval process, etc. -->
+### Testing Gates
+No code can be merged without passing all automated tests (unit, integration, and end-to-end). Code coverage must maintain at least 80% across the application. Performance benchmarks must be met before deployment.
+
+### Deployment Approval Process
+Production deployments require approval from the project lead. Automated CI/CD pipelines must pass all quality gates. Rollback procedures must be tested and ready before each deployment.
 
 ## Governance
-<!-- Example: Constitution supersedes all other practices; Amendments require documentation, approval, migration plan -->
 
-[GOVERNANCE_RULES]
-<!-- Example: All PRs/reviews must verify compliance; Complexity must be justified; Use [GUIDANCE_FILE] for runtime development guidance -->
+All development activities must comply with these constitutional principles. Any deviation requires explicit documentation and approval from the core team. Code reviews and pull requests must verify constitutional compliance. Technical debt must be addressed proactively rather than accumulated.
 
-**Version**: [CONSTITUTION_VERSION] | **Ratified**: [RATIFICATION_DATE] | **Last Amended**: [LAST_AMENDED_DATE]
-<!-- Example: Version: 2.1.1 | Ratified: 2025-06-13 | Last Amended: 2025-07-16 -->
+The constitution supersedes all other development practices. Amendments to this document require documentation of rationale, team approval, and a migration plan for existing code. All team members are responsible for maintaining constitutional compliance.
+
+**Version**: 1.0.0 | **Ratified**: 2026-02-03 | **Last Amended**: 2026-02-03
