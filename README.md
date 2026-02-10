@@ -1,0 +1,130 @@
+# Todo App
+
+A simple todo application built with Python Flask and JSON file storage.
+
+## Prerequisites
+
+- Python 3.8 or higher
+- pip package manager
+- Virtual environment tool (venv included with Python)
+
+## Setup Instructions
+
+### 1. Clone the Repository
+```bash
+git clone <repository-url>
+cd todo_app
+```
+
+### 2. Activate Virtual Environment
+```bash
+source .venv/bin/activate  # On Windows: .venv\Scripts\activate
+```
+
+### 3. Install Dependencies
+```bash
+pip install -r requirements.txt
+```
+
+## Running the Application
+
+### Development Mode
+```bash
+cd src
+python app.py
+```
+
+The application will be accessible at http://localhost:5000
+
+### With Auto-reload
+```bash
+export FLASK_ENV=development
+export FLASK_APP=src/app.py
+flask run
+```
+
+## API Endpoints
+
+### Create Todo
+```
+POST /api/todos
+Content-Type: application/json
+
+{
+  "title": "New task title"
+}
+```
+
+### Get All Todos
+```
+GET /api/todos
+```
+
+### Update Todo
+```
+PUT /api/todos/{id}
+Content-Type: application/json
+
+{
+  "title": "Updated title",
+  "completed": true
+}
+```
+
+### Delete Todo
+```
+DELETE /api/todos/{id}
+```
+
+## Running Tests
+
+### All Tests
+```bash
+python -m pytest
+```
+
+### Unit Tests Only
+```bash
+python -m pytest tests/unit/
+```
+
+### Integration Tests Only
+```bash
+python -m pytest tests/integration/
+```
+
+## Project Structure
+```
+todo_app/
+├── src/
+│   ├── app.py                 # Main application entry point
+│   ├── models/
+│   │   └── todo.py           # Todo model and data handling
+│   ├── routes/
+│   │   └── todo_routes.py    # Todo-related routes
+│   ├── static/
+│   │   ├── css/
+│   │   │   └── style.css
+│   │   └── js/
+│   │       └── main.js
+│   └── templates/
+│       └── index.html
+├── data/
+│   └── todos.json            # Persistent storage for todos
+├── tests/
+│   ├── unit/
+│   │   └── test_todo.py      # Unit tests for todo model
+│   ├── integration/
+│   │   └── test_routes.py    # Integration tests for routes
+│   └── conftest.py           # Test fixtures
+├── requirements.txt          # Python dependencies
+└── README.md               # This file
+```
+
+## Features
+
+- Create, read, update, and delete todo tasks
+- Task validation (title must be 1-255 characters)
+- Persistent storage in JSON file
+- Responsive web interface
+- Client-side and server-side validation
