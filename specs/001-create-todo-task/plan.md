@@ -7,18 +7,18 @@
 
 ## Summary
 
-Implement a console-based todo application with 5 core features: task creation, viewing, updating, completion toggling, and deletion. The application will use in-memory storage with JSON file persistence, following TDD principles and modular architecture.
+Implement a console-based todo application with 5 core features: task creation, viewing, updating, completion toggling, and deletion. The application will use in-memory storage using Python data structures, following TDD principles and modular architecture.
 
 ## Technical Context
 
 **Language/Version**: Python 3.12
 **Primary Dependencies**: Flask, pytest, uuid, json, datetime
-**Storage**: JSON file-based storage (`data/todos.json`)
+**Storage**: In-memory storage using Python data structures
 **Testing**: pytest
 **Target Platform**: Console application
 **Project Type**: Single project (console application)
 **Performance Goals**: Response times under 100ms for user interactions
-**Constraints**: Memory-based storage, console interface, file-based persistence
+**Constraints**: Memory-based storage only, console interface
 **Scale/Scope**: Single-user console application
 
 ## Constitution Check
@@ -27,7 +27,7 @@ Implement a console-based todo application with 5 core features: task creation, 
 
 ### Compliance Verification:
 - [x] User-Centric Design: Console interface will be intuitive with clear menu options and immediate feedback
-- [x] Data Persistence: JSON file-based storage ensures reliable task persistence and prevents data loss
+- [x] Data Persistence: In-memory storage provides fast access with no external dependencies
 - [x] Test-First: TDD approach with pytest - tests will be written before implementation
 - [x] Performance & Responsiveness: Console operations will respond within 100ms threshold
 - [x] Security & Privacy: No sensitive data - simple task management with local storage
@@ -58,7 +58,6 @@ src/
 ├── models/
 │   └── task.py          # Task data model
 ├── services/
-│   ├── storage.py       # JSON file storage service
 │   └── task_service.py  # Task business logic
 ├── cli/
 │   └── main.py          # Console interface and menu
