@@ -40,11 +40,12 @@ def update_task(task_service: TaskService):
             new_title = get_user_input("Enter new title")
 
             try:
+                original_title = task.title
                 new_title = validate_task_title(new_title)
                 updated_task = task_service.update_task(task.id, new_title)
 
                 display_success("Task updated successfully!")
-                print(f"Old title: {task.title}")
+                print(f"Old title: {original_title}")
                 print(f"New title: {updated_task.title}")
 
             except ValueError as e:

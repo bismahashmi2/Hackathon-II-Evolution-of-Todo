@@ -2,17 +2,17 @@ import sys
 from src.services.task_service import TaskService
 from src.lib.utils import (
     clear_screen, pause, get_user_input,
-    display_error, display_success
+    display_error, display_success, get_confirmation
 )
 
-def delete_task():
+def delete_task(task_service):
     """Delete task via CLI"""
     clear_screen()
     print("Delete Task")
     print("===========")
 
     try:
-        task_service = TaskService()
+        # task_service = TaskService()
         tasks = task_service.get_all_tasks()
 
         if not tasks:
@@ -41,7 +41,7 @@ def delete_task():
             print(f"ID: {task.id[:8]}")
             print(f"Status: {'Completed' if task.completed else 'Pending'}")
 
-            if confirm_action("Are you sure you want to delete this task?"):
+            if get_confirmation("Are you sure you want to delete this task?"):
                 if task_service.delete_task(task.id):
                     display_success("Task deleted successfully!")
                 else:

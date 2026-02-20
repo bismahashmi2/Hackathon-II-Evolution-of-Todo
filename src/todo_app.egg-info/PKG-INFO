@@ -26,11 +26,11 @@ Dynamic: summary
 
 # Todo App
 
-A simple todo application built with Python Flask and JSON file storage.
+A simple console-based todo application with in-memory storage.
 
 ## Prerequisites
 
-- Python 3.8 or higher
+- Python 3.12 or higher
 - pip package manager
 - Virtual environment tool (venv included with Python)
 
@@ -57,49 +57,41 @@ pip install -r requirements.txt
 ### Development Mode
 ```bash
 cd src
-python app.py
+python main.py
 ```
 
-The application will be accessible at http://localhost:5000
+The application will run in console mode.
 
-### With Auto-reload
+## Console Commands
+
+### Add Task
 ```bash
-export FLASK_ENV=development
-export FLASK_APP=src/app.py
-flask run
+python main.py
+# Select option 1
 ```
 
-## API Endpoints
-
-### Create Todo
-```
-POST /api/todos
-Content-Type: application/json
-
-{
-  "title": "New task title"
-}
+### View Tasks
+```bash
+python main.py
+# Select option 2
 ```
 
-### Get All Todos
-```
-GET /api/todos
-```
-
-### Update Todo
-```
-PUT /api/todos/{id}
-Content-Type: application/json
-
-{
-  "title": "Updated title",
-  "completed": true
-}
+### Mark Task Complete
+```bash
+python main.py
+# Select option 3
 ```
 
-### Delete Todo
+### Update Task
+```bash
+python main.py
+# Select option 4
 ```
-DELETE /api/todos/{id}
+
+### Delete Task
+```bash
+python main.py
+# Select option 5
 ```
 
 ## Running Tests
@@ -123,27 +115,28 @@ python -m pytest tests/integration/
 ```
 todo_app/
 ├── src/
-│   ├── app.py                 # Main application entry point
+│   ├── cli/
+│   │   ├── main.py           # Main CLI application entry point
+│   │   ├── add_task.py       # Add task functionality
+│   │   ├── view_tasks.py     # View tasks functionality
+│   │   ├── mark_complete.py  # Mark task complete functionality
+│   │   ├── update_task.py    # Update task functionality
+│   │   └── delete_task.py    # Delete task functionality
+│   ├── services/
+│   │   └── task_service.py  # Task service layer (in-memory storage)
 │   ├── models/
-│   │   └── todo.py           # Todo model and data handling
-│   ├── routes/
-│   │   └── todo_routes.py    # Todo-related routes
-│   ├── static/
-│   │   ├── css/
-│   │   │   └── style.css
-│   │   └── js/
-│   │       └── main.js
-│   └── templates/
-│       └── index.html
-├── data/
-│   └── todos.json            # Persistent storage for todos
+│   │   └── task.py          # Todo model and data handling
+│   └── lib/
+│       └── utils.py         # Utility functions
 ├── tests/
 │   ├── unit/
-│   │   └── test_todo.py      # Unit tests for todo model
+│   │   └── test_task.py     # Unit tests for task model
 │   ├── integration/
-│   │   └── test_routes.py    # Integration tests for routes
-│   └── conftest.py           # Test fixtures
-├── requirements.txt          # Python dependencies
+│   │   └── test_services.py # Integration tests for services
+│   └── conftest.py          # Test fixtures
+├── requirements.txt         # Python dependencies
+├── setup.py                # Package configuration
+├── pytest.ini             # Pytest configuration
 └── README.md               # This file
 ```
 
@@ -151,6 +144,23 @@ todo_app/
 
 - Create, read, update, and delete todo tasks
 - Task validation (title must be 1-255 characters)
-- Persistent storage in JSON file
-- Responsive web interface
-- Client-side and server-side validation
+- In-memory storage using Python data structures
+- Console-based interface
+
+## Current Status
+
+✅ **Production-ready for Phase I:**
+- ✅ Basic task management functionality
+- ✅ Console interface
+- ✅ Input validation
+- ✅ In-memory storage using Python data structures
+- ✅ Comprehensive test coverage (150+ test cases)
+- ✅ Robust error handling for all operations
+
+## Next Steps
+
+1. Implement task filtering and search functionality
+2. Consider persistent storage options (Phase II)
+3. Add data validation and sanitization
+4. Improve error handling
+5. Add comprehensive test coverage
